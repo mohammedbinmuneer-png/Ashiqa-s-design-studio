@@ -18,6 +18,10 @@ import { Footer } from "@/components/layout/Footer";
 export const metadata: Metadata = {
   title: "Ashiqa's Design Studio",
   description: "Designing Spaces Beyond Gravity",
+  icons: {
+    icon: "/LOGO.png",
+    apple: "/LOGO.png",
+  },
 };
 
 export default function RootLayout({
