@@ -82,7 +82,7 @@ export default function Home() {
                   <p className="font-heading text-8xl font-bold text-primary/10 select-none">AM</p>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <p className="font-heading text-2xl font-bold text-black">Est. 2009</p>
+                  <p className="font-heading text-2xl font-bold text-black">Est. 2022</p>
                   <p className="text-black text-sm mt-1">Mussaffah, Abu Dhabi, UAE</p>
                 </div>
               </div>
