@@ -59,7 +59,7 @@ export function Navbar() {
         {/* Mobile Nav */}
         <div className="md:hidden">
           <Sheet>
-            <SheetTrigger asChild>
+            <SheetTrigger>
               <Button variant="ghost" size="icon" aria-label="Menu" className="text-primary">
                 <Menu className="h-6 w-6" />
               </Button>
