@@ -16,7 +16,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Anti Gravity Architecture",
+  title: "Ashiqa's Design Studio",
   description: "Designing Spaces Beyond Gravity",
 };
 
