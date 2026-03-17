@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,20 +10,20 @@ const categories = ["All", "Residential", "Commercial", "Cultural", "Urban"];
 const projects = [
   {
     id: 10,
-    title: "Makkah Supermarket",
+    title: "Makkah Supermarket Head Office, Riyadh",
     category: "Commercial",
     location: "Abu Dhabi, UAE",
-    year: "2024",
-    description: "A full head office interior design for Makkah Supermarket — blending functional workspace planning with a refined commercial aesthetic tailored to the brand.",
+    year: "2023",
+    description: "A full head office interior design for Makkah Supermarket â€” blending functional workspace planning with a refined commercial aesthetic tailored to the brand.",
     image: "/supermarket.png",
   },
   {
     id: 9,
-    title: "Mobile Shop",
+    title: "Extel Mobiles",
     category: "Commercial",
     location: "Local",
     year: "2024",
-    description: "A sleek retail interior featuring sage green cabinetry, warm wood counters, and backlit shelving — designed to maximize product visibility and create a premium shopping experience.",
+    description: "A sleek retail interior featuring sage green cabinetry, warm wood counters, and backlit shelving â€” designed to maximize product visibility and create a premium shopping experience.",
     image: "/mobile-shop.jpg",
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     category: "Cultural",
     location: "Tokyo, Japan",
     year: "2023",
-    description: "A cultural center built around negative space — the architecture is defined by what is absent rather than what is present.",
+    description: "A cultural center built around negative space â€” the architecture is defined by what is absent rather than what is present.",
     image: null,
   },
   {
@@ -68,7 +68,7 @@ const projects = [
     category: "Cultural",
     location: "Paris, France",
     year: "2024",
-    description: "A temporary pavilion for the Paris Design Week — a single continuous surface that folds into walls, roof, and seating.",
+    description: "A temporary pavilion for the Paris Design Week â€” a single continuous surface that folds into walls, roof, and seating.",
     image: null,
   },
   {

@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface ContactPayload {
   name: string;
@@ -16,7 +19,6 @@ export async function POST(req: NextRequest) {
     const body: ContactPayload = await req.json();
     const { name, email, subject, message } = body;
 
-    // Validation
     if (!name?.trim() || !email?.trim() || !subject?.trim() || !message?.trim()) {
       return NextResponse.json({ error: "All fields are required." }, { status: 400 });
     }
@@ -29,13 +31,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Message must be at least 10 characters." }, { status: 400 });
     }
 
-    // In production, send an email here via Resend, SendGrid, Nodemailer, etc.
-    // Example: await sendEmail({ to: "info@antigravity.arch", ...body })
+    await resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>",
+      to: "ashiqasdesignstudio@gmail.com",
+      replyTo: email,
+      subject: `New Contact: ${subject}`,
+      html: `
+        <h2>New message from your website</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message.replace(/\n/g, "<br/>")}</p>
+      `,
+    });
 
-    console.log("Contact form submission:", { name, email, subject, message });
-
-    return NextResponse.json({ success: true, message: "Message received." }, { status: 200 });
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch {
-    return NextResponse.json({ error: "Internal server error." }, { status: 500 });
+    return NextResponse.json({ error: "Failed to send message." }, { status: 500 });
   }
 }

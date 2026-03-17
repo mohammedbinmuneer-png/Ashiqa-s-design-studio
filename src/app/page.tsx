@@ -78,9 +78,7 @@ export default function Home() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative">
               <div className="aspect-[4/5] bg-card border border-border relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="font-heading text-8xl font-bold text-primary/10 select-none">AM</p>
-                </div>
+                <img src="/ashiqa.jpg" alt="Ashiqa Muneer" className="w-full h-full object-cover object-top" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <p className="font-heading text-2xl font-bold text-black">Est. 2022</p>
                   <p className="text-black text-sm mt-1">Mussaffah, Abu Dhabi, UAE</p>
