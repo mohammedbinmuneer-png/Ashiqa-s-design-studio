@@ -89,7 +89,7 @@ export function PageLoader() {
               <img
                 src="/logo.png"
                 alt="Ashiqa's Design Studio"
-                className="h-[100px] sm:h-[104px] md:h-[132px] lg:h-[140px] w-auto brightness-0 invert"
+                className="h-[140px] sm:h-[160px] md:h-[190px] lg:h-[220px] w-auto brightness-0 invert"
               />
             </motion.div>
           </div>
