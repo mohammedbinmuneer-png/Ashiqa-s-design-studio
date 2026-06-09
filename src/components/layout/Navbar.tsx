@@ -6,81 +6,108 @@ import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "About Us", href: "/#about" },
+  { name: "Expertise", href: "/#expertise" },
   { name: "Projects", href: "/projects" },
-  { name: "About", href: "/#about" },
   { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isHome = pathname === "/";
+  const lightNav = isHome && !scrolled;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href.startsWith("/#")) return pathname === "/";
+    return pathname === href;
+  };
+
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"
-      }`}
-    >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/LOGO.png" alt="Ashiqa's Design Studio" className="h-14 w-auto" />
-          <span className="font-heading font-bold text-primary tracking-widest text-lg leading-tight">
-            ASHIQA&apos;S<br />DESIGN STUDIO
-          </span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`text-sm uppercase tracking-widest transition-colors hover:text-primary ${
-                pathname === link.href ? "text-primary font-semibold" : "text-foreground/80"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Nav */}
-        <div className="md:hidden">
-          <Sheet>
-            <SheetTrigger>
-              <Button variant="ghost" size="icon" aria-label="Menu" className="text-primary">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-background border-l-border">
-              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <div className="flex flex-col gap-8 mt-16">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-xl font-heading tracking-widest uppercase hover:text-primary transition-colors text-foreground"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
+    <>
+      {/* Centered nav bar — links only */}
+      <header className="fixed top-0 inset-x-0 z-50 flex justify-center px-4 pt-3 pointer-events-none">
+        <div
+          className={cn(
+            "pointer-events-auto h-12 md:h-14 flex items-center justify-center rounded-xl px-6 md:px-10 transition-all duration-500",
+            scrolled
+              ? "bg-background/95 backdrop-blur-md border border-border shadow-sm"
+              : "bg-transparent"
+          )}
+        >
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "relative py-0.5 text-[10px] uppercase tracking-[0.26em] transition-colors duration-300 hover:text-primary whitespace-nowrap",
+                  lightNav
+                    ? isActive(link.href)
+                      ? "text-white font-semibold"
+                      : "text-white/75 hover:text-white"
+                    : isActive(link.href)
+                      ? "text-primary font-semibold"
+                      : "text-foreground/65"
+                )}
+              >
+                {link.name}
+                <span
+                  className={cn(
+                    "absolute -bottom-0.5 left-0 w-full h-px bg-primary origin-left transition-transform duration-300",
+                    isActive(link.href) ? "scale-x-100" : "scale-x-0 hover:scale-x-100"
+                  )}
+                />
+              </Link>
+            ))}
+          </nav>
         </div>
+      </header>
+
+      {/* Mobile menu */}
+      <div className="lg:hidden fixed top-5 right-4 sm:right-6 z-[60]">
+        <Sheet>
+          <SheetTrigger>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Menu"
+              className={cn(
+                "h-10 w-10",
+                lightNav ? "text-white hover:text-white/80" : "text-primary"
+              )}
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-background border-l-border">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <div className="flex flex-col gap-8 mt-16">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-xl font-heading tracking-widest uppercase hover:text-primary transition-colors text-foreground"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
-    </header>
+    </>
   );
 }

@@ -48,72 +48,72 @@
 }
 
 :root {
-  --background: #F5F0E8;
+  --background: #D8D2C6;
   --foreground: #1A1A1A;
-  --card: #EDE8DC;
+  --card: #FFFFFF;
   --card-foreground: #1A1A1A;
-  --popover: #EDE8DC;
+  --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  --primary: #8B6914;
-  --primary-foreground: #F5F0E8;
-  --secondary: #E0D9CC;
+  --primary: #F36E42;
+  --primary-foreground: #FFFFFF;
+  --secondary: #D3BAA1;
   --secondary-foreground: #1A1A1A;
-  --muted: #E0D9CC;
-  --muted-foreground: #6B6560;
-  --accent: #E0D9CC;
+  --muted: #D3BAA1;
+  --muted-foreground: #52525B;
+  --accent: #EBE9E4;
   --accent-foreground: #1A1A1A;
   --destructive: #7F1D1D;
   --border: #CEC8BA;
   --input: #CEC8BA;
-  --ring: #8B6914;
-  --chart-1: #8B6914;
-  --chart-2: #6B6560;
-  --chart-3: #E0D9CC;
+  --ring: #F36E42;
+  --chart-1: #F36E42;
+  --chart-2: #D3BAA1;
+  --chart-3: #EBE9E4;
   --chart-4: #1A1A1A;
-  --chart-5: #F5F0E8;
-  --radius: 0.25rem;
-  --sidebar: #F5F0E8;
+  --chart-5: #FFFFFF;
+  --radius: 0.5rem;
+  --sidebar: #D8D2C6;
   --sidebar-foreground: #1A1A1A;
-  --sidebar-primary: #8B6914;
-  --sidebar-primary-foreground: #F5F0E8;
-  --sidebar-accent: #E0D9CC;
+  --sidebar-primary: #F36E42;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #D3BAA1;
   --sidebar-accent-foreground: #1A1A1A;
   --sidebar-border: #CEC8BA;
-  --sidebar-ring: #8B6914;
+  --sidebar-ring: #F36E42;
 }
 
 .dark {
-  --background: #F5F0E8;
+  --background: #D8D2C6;
   --foreground: #1A1A1A;
-  --card: #EDE8DC;
+  --card: #FFFFFF;
   --card-foreground: #1A1A1A;
-  --popover: #EDE8DC;
+  --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  --primary: #8B6914;
-  --primary-foreground: #F5F0E8;
-  --secondary: #E0D9CC;
+  --primary: #F36E42;
+  --primary-foreground: #FFFFFF;
+  --secondary: #D3BAA1;
   --secondary-foreground: #1A1A1A;
-  --muted: #E0D9CC;
-  --muted-foreground: #6B6560;
-  --accent: #E0D9CC;
+  --muted: #D3BAA1;
+  --muted-foreground: #52525B;
+  --accent: #EBE9E4;
   --accent-foreground: #1A1A1A;
   --destructive: #7F1D1D;
   --border: #CEC8BA;
   --input: #CEC8BA;
-  --ring: #8B6914;
-  --chart-1: #8B6914;
-  --chart-2: #6B6560;
-  --chart-3: #E0D9CC;
+  --ring: #F36E42;
+  --chart-1: #F36E42;
+  --chart-2: #D3BAA1;
+  --chart-3: #EBE9E4;
   --chart-4: #1A1A1A;
-  --chart-5: #F5F0E8;
-  --sidebar: #F5F0E8;
+  --chart-5: #FFFFFF;
+  --sidebar: #D8D2C6;
   --sidebar-foreground: #1A1A1A;
-  --sidebar-primary: #8B6914;
-  --sidebar-primary-foreground: #F5F0E8;
-  --sidebar-accent: #E0D9CC;
+  --sidebar-primary: #F36E42;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #D3BAA1;
   --sidebar-accent-foreground: #1A1A1A;
   --sidebar-border: #CEC8BA;
-  --sidebar-ring: #8B6914;
+  --sidebar-ring: #F36E42;
 }
 
 @layer base {
@@ -122,15 +122,33 @@
   }
   body {
     @apply text-foreground;
-    background-color: #F5F0E8 !important;
+    background-color: #D8D2C6 !important;
   }
   html {
     @apply font-sans;
-    background-color: #F5F0E8 !important;
+    background-color: #D8D2C6 !important;
+    scroll-behavior: smooth;
   }
 }
 
 /* Hide Next.js dev toolbar */
 nextjs-portal {
   display: none !important;
+}
+
+@layer utilities {
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #CEC8BA transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #CEC8BA;
+    border-radius: 9999px;
+  }
 }
