@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { siteImages } from "@/lib/site-images";
 
-const categories = ["All", "Residential", "Commercial", "Cultural", "Urban"];
+const categories = ["All", "Residential", "Commercial", "Fitout", "Landscape"];
 
 const projects = [
   {
@@ -39,7 +39,7 @@ const projects = [
   {
     id: 3,
     title: "The Void Museum",
-    category: "Cultural",
+    category: "Fitout",
     location: "Tokyo, Japan",
     year: "2023",
     description: "A cultural center built around negative space — the architecture is defined by what is absent rather than what is present.",
@@ -48,7 +48,7 @@ const projects = [
   {
     id: 4,
     title: "Meridian Hub",
-    category: "Urban",
+    category: "Landscape",
     location: "New York, USA",
     year: "2021",
     description: "A mixed-use urban campus that reimagines the city block as a vertical neighborhood with public plazas at every level.",
@@ -66,7 +66,7 @@ const projects = [
   {
     id: 6,
     title: "Arc Pavilion",
-    category: "Cultural",
+    category: "Fitout",
     location: "Paris, France",
     year: "2024",
     description: "A temporary pavilion for the Paris Design Week — a single continuous surface that folds into walls, roof, and seating.",
@@ -75,7 +75,7 @@ const projects = [
   {
     id: 8,
     title: "Solaris District",
-    category: "Urban",
+    category: "Landscape",
     location: "Barcelona, Spain",
     year: "2023",
     description: "A solar-powered urban district with integrated energy harvesting facades and zero-carbon infrastructure.",

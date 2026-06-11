@@ -53,7 +53,7 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "relative py-0.5 text-[10px] uppercase tracking-[0.26em] transition-colors duration-300 hover:text-primary whitespace-nowrap",
+                  "relative py-0.5 text-[13px] uppercase tracking-[0.26em] transition-colors duration-300 hover:text-primary whitespace-nowrap",
                   lightNav
                     ? isActive(link.href)
                       ? "text-white font-semibold"

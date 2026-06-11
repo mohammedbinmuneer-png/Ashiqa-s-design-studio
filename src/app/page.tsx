@@ -16,14 +16,17 @@ const heroSlides = [
   {
     image: siteImages.hero[0],
     heading: "Revamping Experiences",
+    headingClass: "text-xl sm:text-4xl md:text-5xl lg:text-[4.2rem]",
   },
   {
     image: siteImages.hero[1],
     heading: "Where Art and Function Intertwine",
+    headingClass: "text-xl sm:text-4xl md:text-5xl lg:text-[4.2rem]",
   },
   {
     image: siteImages.hero[2],
     heading: "A Glimpse into Architectural Harmony",
+    headingClass: "text-xl sm:text-4xl md:text-5xl lg:text-[4.2rem]",
   },
 ];
 
@@ -88,7 +91,7 @@ export default function Home() {
           <img
             src="/logo.png"
             alt="Ashiqa's Design Studio"
-            className="h-[100px] sm:h-[104px] md:h-[132px] lg:h-[140px] w-auto brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] transition-opacity duration-300 group-hover:opacity-90"
+            className="h-[160px] w-auto brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] transition-opacity duration-300 group-hover:opacity-90"
           />
         </Link>
         <AnimatePresence mode="wait">
@@ -111,7 +114,7 @@ export default function Home() {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.15, duration: 0.9 }}
-                className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-white max-w-5xl leading-[1.1] tracking-tight"
+                className={`font-heading ${heroSlides[currentSlide].headingClass} text-white max-w-5xl leading-[1.1] tracking-tight`}
               >
                 {heroSlides[currentSlide].heading}
               </motion.h1>

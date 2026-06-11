@@ -34,7 +34,7 @@ export function GalleryScroll({ items }: GalleryScrollProps) {
               className="absolute inset-0"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-            <p className="absolute bottom-8 left-0 right-0 text-center font-heading text-xl md:text-2xl uppercase tracking-[0.2em] text-white">
+            <p className="absolute bottom-8 left-0 right-0 text-center font-heading text-2xl sm:text-3xl md:text-4xl leading-tight text-white">
               {item.label}
             </p>
           </motion.div>
