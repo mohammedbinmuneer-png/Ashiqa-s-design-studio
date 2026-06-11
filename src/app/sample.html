@@ -1,0 +1,242 @@
+- Is it an animation, UI component, or visual effect?
+- What does it look like (colors, movement, layout)?
+- What technology do you want it in (HTML/CSS, React, etc.)?
+
+Once I know what it looks like, I can help you build it.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Reel Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0f;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Floating Elements ── */
+    .floaters {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .floater {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.18;
+      animation: float linear infinite;
+    }
+    @keyframes float {
+      0%   { transform: translateY(110vh) scale(0.8) rotate(0deg); opacity: 0; }
+      10%  { opacity: 0.18; }
+      90%  { opacity: 0.18; }
+      100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+    }
+
+    /* ── Confetti / Particles ── */
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 1px;
+      animation: confetti linear infinite;
+      opacity: 0;
+    }
+    @keyframes confetti {
+      0%   { transform: translateY(-5vh) rotate(0deg);   opacity: 1; }
+      100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* ── Main Card ── */
+    .card {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 3rem 4rem;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 0 80px rgba(120,80,255,0.25);
+      animation: cardIn 1s cubic-bezier(.22,1,.36,1) both;
+    }
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to   { opacity: 1; transform: translateY(0)   scale(1); }
+    }
+
+    /* ── Glow Text ── */
+    .glow-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #a78bfa, #60a5fa, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      filter: drop-shadow(0 0 18px rgba(167,139,250,0.7));
+      animation: textPulse 3s ease-in-out infinite;
+    }
+    @keyframes textPulse {
+      0%, 100% { filter: drop-shadow(0 0 18px rgba(167,139,250,0.7)); }
+      50%       { filter: drop-shadow(0 0 36px rgba(96,165,250,0.9)); }
+    }
+
+    /* ── Typewriter subtitle ── */
+    .subtitle {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.6);
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid rgba(167,139,250,0.8);
+      width: 0;
+      animation: type 2.5s steps(38) 0.8s forwards, blink 0.7s step-end infinite;
+    }
+    @keyframes type  { to { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    /* ── Feature Pills ── */
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .pill {
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      opacity: 0;
+      transform: translateY(12px);
+      animation: pillIn 0.5s ease forwards;
+    }
+    .pill:nth-child(1) { animation-delay: 1.8s; color: #a78bfa; }
+    .pill:nth-child(2) { animation-delay: 2.0s; color: #60a5fa; }
+    .pill:nth-child(3) { animation-delay: 2.2s; color: #f472b6; }
+    .pill:nth-child(4) { animation-delay: 2.4s; color: #34d399; }
+    .pill:nth-child(5) { animation-delay: 2.6s; color: #fbbf24; }
+    @keyframes pillIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Smooth image strip ── */
+    .strip-wrap {
+      margin-top: 2rem;
+      overflow: hidden;
+      border-radius: 12px;
+      width: 100%;
+      height: 80px;
+      position: relative;
+    }
+    .strip {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      animation: scroll 12s linear infinite;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .strip-item {
+      width: 120px;
+      height: 80px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating blobs -->
+  <div class="floaters" id="floaters"></div>
+
+  <!-- Main card -->
+  <div class="card">
+    <h1 class="glow-title">AI Reel Magic ✨</h1>
+    <p class="subtitle">Crafted with animations, particles & storytelling</p>
+
+    <div class="pills">
+      <span class="pill">🫧 Floating Elements</span>
+      <span class="pill">🎞 Smooth Transitions</span>
+      <span class="pill">✨ Text Glow</span>
+      <span class="pill">🎊 Confetti</span>
+      <span class="pill">🖼 Image Storytelling</span>
+    </div>
+
+    <!-- Scrolling image strip -->
+    <div class="strip-wrap">
+      <div class="strip" id="strip"></div>
+    </div>
+  </div>
+
+  <script>
+    // ── Floating blobs ──
+    const floaterContainer = document.getElementById('floaters');
+    const blobColors = ['#a78bfa','#60a5fa','#f472b6','#34d399','#fbbf24'];
+    for (let i = 0; i < 18; i++) {
+      const el = document.createElement('div');
+      el.className = 'floater';
+      const size = 40 + Math.random() * 120;
+      el.style.cssText = `
+        width:${size}px; height:${size}px;
+        left:${Math.random()*100}%;
+        background:${blobColors[i % blobColors.length]};
+        animation-duration:${8 + Math.random()*14}s;
+        animation-delay:${-Math.random()*20}s;
+      `;
+      floaterContainer.appendChild(el);
+    }
+
+    // ── Confetti particles ──
+    const confettiColors = ['#a78bfa','#60a5fa','#f472b6','#34d399','#fbbf24','#fb923c'];
+    for (let i = 0; i < 40; i++) {
+      const el = document.createElement('div');
+      el.className = 'particle';
+      el.style.cssText = `
+        left:${Math.random()*100}%;
+        background:${confettiColors[Math.floor(Math.random()*confettiColors.length)]};
+        animation-duration:${4 + Math.random()*8}s;
+        animation-delay:${-Math.random()*12}s;
+        width:${4+Math.random()*8}px;
+        height:${4+Math.random()*8}px;
+      `;
+      floaterContainer.appendChild(el);
+    }
+
+    // ── Image strip (emoji stand-ins for images) ──
+    const emojis = ['🌌','🎨','🤖','🎬','🌊','🔮','🎭','🦋','🌸','🚀'];
+    const strip = document.getElementById('strip');
+    // duplicate for seamless loop
+    [...emojis, ...emojis].forEach(e => {
+      const item = document.createElement('div');
+      item.className = 'strip-item';
+      item.textContent = e;
+      strip.appendChild(item);
+    });
+  </script>
+</body>
+</html>
