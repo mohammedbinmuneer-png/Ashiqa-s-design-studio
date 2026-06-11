@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Marcellus } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { PageLoader } from "@/components/layout/PageLoader";
+import { LogoWrapper } from "@/components/layout/LogoWrapper";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -12,10 +16,6 @@ const marcellus = Marcellus({
   subsets: ["latin"],
   weight: "400",
 });
-
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { PageLoader } from "@/components/layout/PageLoader";
 
 export const metadata: Metadata = {
   title: "Ashiqa's Design Studio",
@@ -43,6 +43,7 @@ export default function RootLayout({
       >
         <PageLoader />
         <Navbar />
+        <LogoWrapper />
         <main className="min-h-screen">
           {children}
         </main>

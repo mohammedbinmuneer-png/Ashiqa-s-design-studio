@@ -82,18 +82,6 @@ export default function Home() {
     <div className="bg-[#D8D2C6]">
       {/* Hero — full-bleed like lobarch.com */}
       <section className="relative w-full h-[85vh] min-h-[560px] overflow-hidden group/hero">
-        <Link
-          href="/"
-          className="absolute top-4 left-4 sm:left-6 md:left-8 z-30 group"
-          aria-label="Ashiqa's Design Studio — Home"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo.png"
-            alt="Ashiqa's Design Studio"
-            className="h-[160px] w-auto brightness-0 invert drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] transition-opacity duration-300 group-hover:opacity-90"
-          />
-        </Link>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}

@@ -37,20 +37,6 @@ export function Navbar() {
 
   return (
     <>
-      {/* Logo on top left */}
-      <Link
-        href="/"
-        className="fixed top-3 left-4 sm:left-6 md:left-8 z-[55] group"
-        aria-label="Ashiqa's Design Studio — Home"
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/logo.png"
-          alt="Ashiqa's Design Studio"
-          className="h-[50px] md:h-[60px] w-auto transition-opacity duration-300 group-hover:opacity-80"
-        />
-      </Link>
-
       {/* Centered nav bar — links only */}
       <header className="fixed top-0 inset-x-0 z-50 flex justify-center px-4 pt-3 pointer-events-none">
         <div
