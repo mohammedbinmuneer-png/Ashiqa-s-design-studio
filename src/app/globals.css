@@ -50,6 +50,11 @@
 :root {
   --background: #D8D2C6;
   --foreground: #1A1A1A;
+  /* Design tokens */
+  --ash-white: #FFFFFF;
+  --ash-off-white: #F5F4F2;
+  --ash-fog: #E8E7E4;
+  --ash-slate: #3A3D42;
   --card: #FFFFFF;
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
@@ -85,6 +90,11 @@
 .dark {
   --background: #D8D2C6;
   --foreground: #1A1A1A;
+  /* Design tokens (dark still reference same tokens for consistency) */
+  --ash-white: #FFFFFF;
+  --ash-off-white: #F5F4F2;
+  --ash-fog: #E8E7E4;
+  --ash-slate: #3A3D42;
   --card: #FFFFFF;
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
