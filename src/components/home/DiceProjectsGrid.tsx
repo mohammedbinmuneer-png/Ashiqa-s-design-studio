@@ -23,9 +23,9 @@ const PROJECT_SLOTS = [
 function ProjectSlot({ project }: { project: DiceProject }) {
   const content = (
     <div className="group relative h-full overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 shadow-[0_28px_60px_-32px_rgba(15,23,42,0.18)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:shadow-2xl">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-[#F9F7F1]/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-ash-off-white/80 pointer-events-none" />
       <div className="relative overflow-hidden rounded-[2rem]">
-        <div className="aspect-[4/3] bg-[#F5F1EA]">
+        <div className="aspect-[4/3] bg-ash-off-white">
           <Image3D
             src={project.image}
             alt={project.title}
@@ -38,10 +38,10 @@ function ProjectSlot({ project }: { project: DiceProject }) {
 
       <div className="relative p-5 md:p-6">
         <div className="mb-4 flex items-center justify-between">
-          <span className="font-heading text-xs uppercase tracking-[0.35em] text-[#8B7F6F]">
+          <span className="font-heading text-xs uppercase tracking-[0.35em] text-ash-slate">
             {project.num}
           </span>
-          <span className="grid h-10 w-10 place-items-center rounded-full bg-[#C7B18F]/15 text-primary text-sm font-semibold">
+          <span className="grid h-10 w-10 place-items-center rounded-full bg-ash-off-white/15 text-primary text-sm font-semibold">
             {project.num}
           </span>
         </div>
@@ -67,10 +67,10 @@ type DiceProjectsGridProps = {
 
 export function DiceProjectsGrid({ projects }: DiceProjectsGridProps) {
   return (
-    <div className="relative w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#FDF9F2] via-[#F7F1E5] to-[#E8DED2] p-6 md:p-8 shadow-2xl">
+    <div className="relative w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-ash-white via-ash-off-white to-ash-fog p-6 md:p-8 shadow-2xl">
       <div className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
-      <div className="pointer-events-none absolute -right-12 top-1/2 h-56 w-56 rounded-full bg-[#BFA988]/10 blur-3xl" />
-      <div className="pointer-events-none absolute left-1/2 bottom-0 -translate-x-1/2 h-36 w-36 rounded-full bg-[#F2E4D6] blur-2xl" />
+      <div className="pointer-events-none absolute -right-12 top-1/2 h-56 w-56 rounded-full bg-ash-off-white/10 blur-3xl" />
+      <div className="pointer-events-none absolute left-1/2 bottom-0 -translate-x-1/2 h-36 w-36 rounded-full bg-ash-off-white blur-2xl" />
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
         {PROJECT_SLOTS.map((slot) => {

@@ -79,7 +79,7 @@ export function FocusAreasScroll({ areas }: FocusAreasScrollProps) {
             <h2 className="font-heading text-4xl sm:text-5xl text-foreground mb-4">
               Our Focus Areas
             </h2>
-            <p className="text-[#3F3F46] text-sm md:text-base leading-relaxed">
+            <p className="text-ash-slate text-sm md:text-base leading-relaxed">
               Our areas of competence include interior design, architecture, and landscaping,
               with a focus on creating quiet and lovely environments.
             </p>
@@ -93,7 +93,7 @@ export function FocusAreasScroll({ areas }: FocusAreasScrollProps) {
                   itemRefs.current[idx] = el;
                 }}
                 className={cn(
-                  "min-h-[55vh] lg:min-h-[65vh] flex flex-col justify-center py-10 border-b border-[#CEC8BA]/40 last:border-0 transition-opacity duration-500",
+                  "min-h-[55vh] lg:min-h-[65vh] flex flex-col justify-center py-10 border-b border-ash-fog/40 last:border-0 transition-opacity duration-500",
                   activeIndex === idx ? "opacity-100" : "opacity-35"
                 )}
               >
@@ -122,7 +122,7 @@ export function FocusAreasScroll({ areas }: FocusAreasScrollProps) {
                         y: activeIndex === idx ? 0 : 8,
                       }}
                       transition={{ duration: 0.45 }}
-                      className="text-sm md:text-base text-[#3F3F46] leading-relaxed max-w-lg"
+                      className="text-sm md:text-base text-ash-slate leading-relaxed max-w-lg"
                     >
                       {area.description}
                     </motion.p>

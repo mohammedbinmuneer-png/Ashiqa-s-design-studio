@@ -23,7 +23,7 @@ export function GalleryScroll({ items }: GalleryScrollProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1 }}
-            className="group relative shrink-0 w-[82vw] sm:w-[70vw] md:w-auto snap-center aspect-[4/5] bg-[#EBE9E4]"
+            className="group relative shrink-0 w-[82vw] sm:w-[70vw] md:w-auto snap-center aspect-[4/5] bg-ash-fog"
           >
             <Image3D
               src={item.image}

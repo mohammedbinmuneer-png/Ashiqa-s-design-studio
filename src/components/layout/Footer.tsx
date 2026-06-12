@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="py-8 md:py-12 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 md:px-12">
-        <div className="bg-[#D3BAA1] text-[#1A1A1A] rounded-[2rem] p-10 md:p-16 space-y-12">
+        <div className="bg-ash-off-white text-ash-slate rounded-[2rem] p-10 md:p-16 space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             <div className="space-y-6">
               <h3 className="text-2xl md:text-3xl font-heading tracking-[0.15em] leading-tight">
@@ -12,7 +12,7 @@ export function Footer() {
                 <br />
                 Design Studio
               </h3>
-              <p className="max-w-md text-sm leading-relaxed text-[#1A1A1A]/85">
+              <p className="max-w-md text-sm leading-relaxed text-ash-slate/85">
                 Bring your dreams into reality by breathing life into your ideas and visions.
               </p>
             </div>
@@ -25,12 +25,12 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#about" className="hover:text-white transition-colors">
+                  <Link href="/#about" className="hover:text-ash-white transition-colors">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#expertise" className="hover:text-white transition-colors">
+                  <Link href="/#expertise" className="hover:text-ash-white transition-colors">
                     Expertise
                   </Link>
                 </li>
@@ -65,7 +65,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-[#1A1A1A]/10 pt-8 text-xs text-[#1A1A1A]/70">
+          <div className="border-t border-ash-slate/10 pt-8 text-xs text-ash-slate/70">
             <p>
               © {new Date().getFullYear()} by Ashiqa&apos;s Design Studio | All rights reserved
             </p>

@@ -53,16 +53,16 @@ export function PageLoader() {
           animate={{ opacity: phase === "exit" ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.85, ease: "easeInOut" }}
-          className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#0a0a0a]"
+          className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-ash-slate"
           aria-hidden={phase === "exit"}
         >
           {/* Ambient glow */}
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(243,110,66,0.08)_0%,transparent_55%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(58,61,66,0.08)_0%,transparent_55%)]" />
 
           <div className="relative px-6">
             {/* Writing cursor */}
             <motion.div
-              className="absolute top-[-8%] bottom-[-8%] w-[2px] bg-gradient-to-b from-transparent via-white/80 to-transparent z-20 shadow-[0_0_12px_rgba(255,255,255,0.45)]"
+              className="absolute top-[-8%] bottom-[-8%] w-[2px] bg-gradient-to-b from-transparent via-ash-white/80 to-transparent z-20 shadow-[0_0_12px_rgba(255,255,255,0.45)]"
               initial={{ left: "0%", opacity: 0 }}
               animate={{
                 left: ["0%", "100%"],
@@ -101,7 +101,7 @@ export function PageLoader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: WRITE_DURATION * 0.55, duration: 0.5 }}
           >
-            <p className="text-[11px] uppercase tracking-[0.45em] text-white/35 font-sans">
+            <p className="text-[11px] uppercase tracking-[0.45em] text-ash-white/35 font-sans">
               Loading
             </p>
             <div className="flex gap-1.5">
