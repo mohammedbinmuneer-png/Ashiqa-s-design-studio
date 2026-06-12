@@ -85,7 +85,7 @@
   --sidebar-accent-foreground: #1A1A1A;
   --sidebar-border: #CEC8BA;
   --sidebar-ring: #F36E42;
-}
+
   /* Map core app tokens to the 4-color theme */
   --background: var(--ash-white);
   --foreground: var(--ash-slate);
@@ -119,6 +119,7 @@
   --sidebar-accent-foreground: var(--ash-slate);
   --sidebar-border: var(--ash-fog);
   --sidebar-ring: var(--ash-slate);
+}
 
 .dark {
   --background: #D8D2C6;
@@ -157,7 +158,7 @@
   --sidebar-accent-foreground: #1A1A1A;
   --sidebar-border: #CEC8BA;
   --sidebar-ring: #F36E42;
-}
+
   /* Keep tokens consistent in dark mode (palette is neutral/brand-driven) */
   --background: var(--ash-white);
   --foreground: var(--ash-slate);
@@ -191,6 +192,7 @@
   --sidebar-accent-foreground: var(--ash-slate);
   --sidebar-border: var(--ash-fog);
   --sidebar-ring: var(--ash-slate);
+}
 
 @layer base {
   * {

@@ -1,0 +1,20 @@
+{
+  "gridDirection": "left-to-right, top-to-bottom",
+  "colors": {
+    "white": "#FFFFFF",
+    "offWhite": "#F5F4F2",
+    "fog": "#E8E7E4",
+    "slate": "#3A3D42"
+  },
+  "slots": [
+    {"slot":1,"file":"01-logo-reveal.md"},
+    {"slot":2,"file":"02-bts-personal.md"},
+    {"slot":3,"file":"03-before-teaser.md"},
+    {"slot":4,"file":"04-quote-editorial.md"},
+    {"slot":5,"file":"05-hero-project-slate.md"},
+    {"slot":6,"file":"06-day-in-life.md"},
+    {"slot":7,"file":"07-carousel-pause.md"},
+    {"slot":8,"file":"08-detail-texture.md"},
+    {"slot":9,"file":"09-cta-announcement.md"}
+  ]
+}
