@@ -86,6 +86,39 @@
   --sidebar-border: #CEC8BA;
   --sidebar-ring: #F36E42;
 }
+  /* Map core app tokens to the 4-color theme */
+  --background: var(--ash-white);
+  --foreground: var(--ash-slate);
+  --card: var(--ash-white);
+  --card-foreground: var(--ash-slate);
+  --popover: var(--ash-white);
+  --popover-foreground: var(--ash-slate);
+  --primary: var(--ash-slate);
+  --primary-foreground: var(--ash-white);
+  --secondary: var(--ash-off-white);
+  --secondary-foreground: var(--ash-slate);
+  --muted: var(--ash-off-white);
+  --muted-foreground: var(--ash-slate);
+  --accent: var(--ash-fog);
+  --accent-foreground: var(--ash-slate);
+  --destructive: var(--ash-slate);
+  --border: var(--ash-fog);
+  --input: var(--ash-fog);
+  --ring: var(--ash-slate);
+  --chart-1: var(--ash-slate);
+  --chart-2: var(--ash-off-white);
+  --chart-3: var(--ash-fog);
+  --chart-4: var(--ash-slate);
+  --chart-5: var(--ash-white);
+  --radius: 0.5rem;
+  --sidebar: var(--ash-off-white);
+  --sidebar-foreground: var(--ash-slate);
+  --sidebar-primary: var(--ash-slate);
+  --sidebar-primary-foreground: var(--ash-white);
+  --sidebar-accent: var(--ash-off-white);
+  --sidebar-accent-foreground: var(--ash-slate);
+  --sidebar-border: var(--ash-fog);
+  --sidebar-ring: var(--ash-slate);
 
 .dark {
   --background: #D8D2C6;
@@ -125,6 +158,39 @@
   --sidebar-border: #CEC8BA;
   --sidebar-ring: #F36E42;
 }
+  /* Keep tokens consistent in dark mode (palette is neutral/brand-driven) */
+  --background: var(--ash-white);
+  --foreground: var(--ash-slate);
+  --card: var(--ash-white);
+  --card-foreground: var(--ash-slate);
+  --popover: var(--ash-white);
+  --popover-foreground: var(--ash-slate);
+  --primary: var(--ash-slate);
+  --primary-foreground: var(--ash-white);
+  --secondary: var(--ash-off-white);
+  --secondary-foreground: var(--ash-slate);
+  --muted: var(--ash-off-white);
+  --muted-foreground: var(--ash-slate);
+  --accent: var(--ash-fog);
+  --accent-foreground: var(--ash-slate);
+  --destructive: var(--ash-slate);
+  --border: var(--ash-fog);
+  --input: var(--ash-fog);
+  --ring: var(--ash-slate);
+  --chart-1: var(--ash-slate);
+  --chart-2: var(--ash-off-white);
+  --chart-3: var(--ash-fog);
+  --chart-4: var(--ash-slate);
+  --chart-5: var(--ash-white);
+  --radius: 0.5rem;
+  --sidebar: var(--ash-off-white);
+  --sidebar-foreground: var(--ash-slate);
+  --sidebar-primary: var(--ash-slate);
+  --sidebar-primary-foreground: var(--ash-white);
+  --sidebar-accent: var(--ash-off-white);
+  --sidebar-accent-foreground: var(--ash-slate);
+  --sidebar-border: var(--ash-fog);
+  --sidebar-ring: var(--ash-slate);
 
 @layer base {
   * {
@@ -132,11 +198,11 @@
   }
   body {
     @apply text-foreground;
-    background-color: #D8D2C6 !important;
+    background-color: var(--background) !important;
   }
   html {
     @apply font-sans;
-    background-color: #D8D2C6 !important;
+    background-color: var(--background) !important;
     scroll-behavior: smooth;
   }
 }

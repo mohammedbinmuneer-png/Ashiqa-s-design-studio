@@ -51,7 +51,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-24 px-4 sm:px-6 md:px-12 bg-[#D8D2C6]">
+    <div className="min-h-screen pt-24 pb-24 px-4 sm:px-6 md:px-12 bg-background">
       <div className="container mx-auto max-w-7xl">
         <div className="bg-white rounded-[2rem] p-8 md:p-16 lg:p-20 shadow-sm space-y-16">
           
@@ -74,7 +74,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-2 space-y-10"
             >
-              <p className="text-[#3F3F46] leading-relaxed text-sm sm:text-base font-sans">
+              <p className="text-ash-slate leading-relaxed text-sm sm:text-base font-sans">
                 Have a project in mind? We&apos;d love to hear about it. Reach out and let&apos;s start
                 a conversation about how we can bring your architectural and spatial vision to life.
               </p>
@@ -82,21 +82,21 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {contactInfo.map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full border border-[#CEC8BA] flex items-center justify-center flex-shrink-0 bg-[#EBE9E4]">
+                    <div className="w-12 h-12 rounded-full border border-ash-fog flex items-center justify-center flex-shrink-0 bg-ash-fog">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-[#71717A] mb-1 font-sans font-medium">{label}</p>
+                      <p className="text-xs uppercase tracking-widest text-ash-slate mb-1 font-sans font-medium">{label}</p>
                       <p className="text-foreground text-sm sm:text-base font-medium font-sans">{value}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="border-t border-[#CEC8BA]/30 pt-8 space-y-3 font-sans">
+              <div className="border-t border-ash-fog/30 pt-8 space-y-3 font-sans">
                 <p className="text-xs uppercase tracking-widest text-[#71717A] font-bold">Office Hours</p>
                 <p className="text-foreground text-sm">Monday – Friday: 9:00 AM – 6:00 PM</p>
-                <p className="text-[#52525B] text-sm">Saturday: By appointment</p>
+                <p className="text-ash-slate text-sm">Saturday: By appointment</p>
               </div>
             </motion.div>
 
@@ -108,10 +108,10 @@ export default function ContactPage() {
               className="lg:col-span-3"
             >
               {status === "success" ? (
-                <div className="flex flex-col items-center justify-center py-20 text-center border border-[#CEC8BA]/30 bg-[#EBE9E4]/20 rounded-[1.5rem] p-8">
+                <div className="flex flex-col items-center justify-center py-20 text-center border border-ash-fog/30 bg-ash-fog/20 rounded-[1.5rem] p-8">
                   <CheckCircle className="h-16 w-16 text-primary mb-4" />
                   <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Message Sent</h3>
-                  <p className="text-[#52525B] mb-8 font-sans">We will get back to you within 24 hours.</p>
+                  <p className="text-ash-slate mb-8 font-sans">We will get back to you within 24 hours.</p>
                   <Button
                     onClick={() => setStatus("idle")}
                     className="rounded-full px-8 h-12 uppercase tracking-[0.2em] text-xs font-semibold bg-primary text-white hover:bg-primary/95 transition-all shadow-md"

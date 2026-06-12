@@ -79,7 +79,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#D8D2C6]">
+    <div className="bg-background">
       {/* Hero — full-bleed like lobarch.com */}
       <section className="relative w-full h-[85vh] min-h-[560px] overflow-hidden group/hero">
         <AnimatePresence mode="wait">

@@ -99,8 +99,8 @@ export default function ProjectsPage() {
   const renderSlot = (project: typeof projects[0] | undefined, slotIndex: number, gridAreaClass: string) => {
     if (!project) {
       return (
-        <div className={`hidden md:flex flex-col items-center justify-center h-full min-h-[250px] border border-dashed border-[#CEC8BA]/20 rounded-[1.5rem] opacity-30 select-none ${gridAreaClass}`}>
-          <div className="w-4 h-4 rounded-full bg-[#CEC8BA]/30" />
+            <div className={`hidden md:flex flex-col items-center justify-center h-full min-h-[250px] border border-dashed border-ash-fog/20 rounded-[1.5rem] opacity-30 select-none ${gridAreaClass}`}>
+              <div className="w-4 h-4 rounded-full bg-ash-fog/30" />
         </div>
       );
     }
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
       >
         <Link href={`/projects/${project.id}`} className="block h-full space-y-4">
           {project.image && (
-            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-[#EBE9E4] shadow-sm">
+            <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-ash-fog shadow-sm">
               <img
                 src={project.image}
                 alt={project.title}
@@ -133,14 +133,14 @@ export default function ProjectsPage() {
                   {project.title}
                 </h2>
               </div>
-              <div className="w-8 h-8 rounded-full border border-[#CEC8BA] flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 flex-shrink-0">
+              <div className="w-8 h-8 rounded-full border border-ash-fog flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300 flex-shrink-0">
                 <ArrowUpRight className="h-4 w-4 text-[#52525B] group-hover:text-white transition-colors" />
               </div>
             </div>
-            <p className="text-[#3F3F46] text-xs leading-relaxed font-sans line-clamp-2">{project.description}</p>
-            <div className="flex items-center gap-3 text-[10px] text-[#71717A] uppercase tracking-widest font-sans font-medium">
+            <p className="text-ash-slate text-xs leading-relaxed font-sans line-clamp-2">{project.description}</p>
+            <div className="flex items-center gap-3 text-[10px] text-ash-slate uppercase tracking-widest font-sans font-medium">
               <span>{project.location}</span>
-              <span className="w-1 h-1 rounded-full bg-[#CEC8BA]" />
+              <span className="w-1 h-1 rounded-full bg-ash-fog" />
               <span>{project.year}</span>
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-24 px-4 sm:px-6 md:px-12 bg-[#D8D2C6]">
+    <div className="min-h-screen pt-24 pb-24 px-4 sm:px-6 md:px-12 bg-background">
       <div className="container mx-auto max-w-7xl">
         <div className="bg-white rounded-[2rem] p-8 md:p-16 lg:p-20 shadow-sm space-y-16">
           
@@ -239,13 +239,13 @@ export default function ProjectsPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.6 }}
-                  className="relative w-full border border-[#CEC8BA]/30 rounded-[2.5rem] p-6 md:p-12 bg-[#FAF9F6]/50 shadow-inner grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-stretch"
+                  className="relative w-full border border-ash-fog/30 rounded-[2.5rem] p-6 md:p-12 bg-ash-off-white/50 shadow-inner grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-stretch"
                 >
                   {/* Absolute Dice Frame Accents */}
-                  <div className="absolute top-4 left-4 w-2.5 h-2.5 rounded-full bg-[#CEC8BA]/40" />
-                  <div className="absolute top-4 right-4 w-2.5 h-2.5 rounded-full bg-[#CEC8BA]/40" />
-                  <div className="absolute bottom-4 left-4 w-2.5 h-2.5 rounded-full bg-[#CEC8BA]/40" />
-                  <div className="absolute bottom-4 right-4 w-2.5 h-2.5 rounded-full bg-[#CEC8BA]/40" />
+                  <div className="absolute top-4 left-4 w-2.5 h-2.5 rounded-full bg-ash-fog/40" />
+                  <div className="absolute top-4 right-4 w-2.5 h-2.5 rounded-full bg-ash-fog/40" />
+                  <div className="absolute bottom-4 left-4 w-2.5 h-2.5 rounded-full bg-ash-fog/40" />
+                  <div className="absolute bottom-4 right-4 w-2.5 h-2.5 rounded-full bg-ash-fog/40" />
 
                   {/* Row 1, Col 1: Project 0 */}
                   {renderSlot(chunk[0], 0, "md:col-start-1 md:row-start-1")}

@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'ash-white': '#FFFFFF',
-        'ash-off-white': '#F5F4F2',
-        'ash-fog': '#E8E7E4',
-        'ash-slate': '#3A3D42',
+        'ash-white': 'var(--ash-white)',
+        'ash-off-white': 'var(--ash-off-white)',
+        'ash-fog': 'var(--ash-fog)',
+        'ash-slate': 'var(--ash-slate)',
       },
     },
   },

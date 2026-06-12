@@ -29,7 +29,7 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen pt-24 pb-24 px-4 sm:px-6 md:px-12 bg-[#D8D2C6]">
+    <div className="min-h-screen pt-24 pb-24 px-4 sm:px-6 md:px-12 bg-background">
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
           transition={{ duration: 0.6 }}
           className="bg-white rounded-[2rem] p-8 md:p-14 lg:p-16 shadow-sm"
         >
-          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-foreground pb-6 border-b border-[#CEC8BA]/60">
+          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-foreground pb-6 border-b border-ash-fog/60">
             Privacy Policy
           </h1>
 
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
                 {section.paragraphs.map((text) => (
                   <p
                     key={text.slice(0, 40)}
-                    className="text-[#3F3F46] text-sm sm:text-base leading-relaxed font-sans"
+                    className="text-ash-slate text-sm sm:text-base leading-relaxed font-sans"
                   >
                     {text}
                   </p>
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
               </motion.section>
             ))}
 
-            <p className="text-sm text-[#71717A] pt-4 border-t border-[#CEC8BA]/40">
+            <p className="text-sm text-ash-slate pt-4 border-t border-ash-fog/40">
               For privacy-related questions, contact us at{" "}
               <Link
                 href="mailto:ashiqasdesignstudio@gmail.com"
