@@ -46,16 +46,17 @@ export function LogoWrapper() {
   return (
     <Link
       href="/"
-      className="fixed top-[-8px] left-3 z-30 group"
+      className="fixed top-3 left-3 z-[70] group"
       aria-label="Ashiqa's Design Studio — Home"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/logo.png"
         alt="Ashiqa's Design Studio"
-        className={`h-[160px] w-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] transition-opacity duration-300 group-hover:opacity-90 ${
+        className={`h-10 sm:h-12 md:h-14 lg:h-16 w-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)] transition-opacity duration-300 group-hover:opacity-90 ${
           !isProjectsOrContact && isDarkBackground ? "brightness-0 invert" : ""
         }`}
+        style={{ willChange: "filter, opacity" }}
       />
     </Link>
   );
