@@ -15,7 +15,7 @@ export function LogoWrapper() {
       <span className="inline-flex items-center justify-center rounded-md p-1 bg-ash-off-white/90 ring-1 ring-border shadow-sm">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/logo.png"
+          src="/LOGO.png"
           alt="Ashiqa's Design Studio"
           className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-opacity duration-300 group-hover:opacity-90"
           style={{ willChange: "opacity" }}
