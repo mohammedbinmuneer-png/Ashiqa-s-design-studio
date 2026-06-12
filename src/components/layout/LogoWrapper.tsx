@@ -17,7 +17,7 @@ export function LogoWrapper() {
         <img
           src="/LOGO.png"
           alt="Ashiqa's Design Studio"
-          className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-opacity duration-300 group-hover:opacity-90"
+          className="h-[160px] w-auto transition-opacity duration-300 group-hover:opacity-90"
           style={{ willChange: "opacity" }}
         />
       </span>

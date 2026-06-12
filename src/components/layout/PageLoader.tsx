@@ -87,7 +87,7 @@ export function PageLoader() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo.png"
+                src="/LOGO.png"
                 alt="Ashiqa's Design Studio"
                 className="h-[140px] sm:h-[160px] md:h-[190px] lg:h-[220px] w-auto brightness-0 invert"
               />
